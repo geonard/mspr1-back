@@ -4,8 +4,9 @@
   "description": "Backend server for my application",
   "main": "server.js",
   "scripts": {
-  "build": "tsc",
-  "start": "node dist/server.js"
+    "build": "tsc",
+    "postbuild": "scp -r ./build/ user@serveur:/var/www/app",
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

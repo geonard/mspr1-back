@@ -8,6 +8,11 @@ const config = require('./config');
 
 // Middleware
 app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000', // Ou l'URL de votre frontend déployé
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));
+
 app.use(express.json());
 
 const port = config.PORT; // Utiliser la variable globale
